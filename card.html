@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>card</title>	
+		<style>
+			.table{
+				width:600px;
+				margin:50px;
+				left:-200px;
+				position: absolute;
+			}
+			.table div {
+				position: absolute;
+			}
+			.left,.right,.bottom{
+				border: 1px solid #ccc;
+				height:150px;
+				padding: 4px;
+			}
+			.table .left{
+				-webkit-transform: rotate(90deg);
+				top:300px;
+				
+			}
+			.table .right{
+				-webkit-transform: rotate(-90deg);
+				left:840px;
+				top:300px;
+			}
+			.table .bottom{
+				top:545px;
+				left:420px;
+			}
+			.table img{
+				float:left;
+				margin-left: -30px;
+			}
+			.table .role{
+				position:relative;
+				top:20px;
+				left:70px;
+			}
+			.table .btn{
+				position:relative;
+				left:185px;
+				top:-150px;
+			}
+			.table .card{
+				position:relative;
+				display:inline-block;
+				min-width:640px;
+				left:100px;
+			}
+			.btn label{
+				margin:4px;
+				padding:4px;
+				border:1px solid #ccc;
+			}
+			.btn .open{
+				display:inline-block;
+				border:1px solid #666;
+				background: #BDCCD5;
+			}
+			.btn .close{
+				display:inline-block;
+				border:1px solid #ccc;
+				color:#ccc;
+			}
+			.btn .none{
+				display:none;
+			}
+			.desk{
+				position: absolute;
+				top:120px;
+				left:350px;
+				width:460px;
+			}
+			.nav{
+				position: absolute;
+				top:0px;
+				left:0px;
+				height:30px;
+				background:#C1C1C1;
+				width:100%;
+				padding:15px;
+				border-bottom: 3px solid #666;
+			}
+			.nav span{
+				font-size:12px;
+				margin-left:10px;
+				color:#CC4433;
+			}
+			.nav input{
+				margin:3px;
+			}
+					
+		</style>	
+	</head>
+	<body>
+		<div class="nav">
+			<label>角色名：<input type="text" value="Sky" id="role_name" /></label>
+			<input  type="button" value="join" onclick="roleJoin()" />
+			<input  type="button" value="start" onclick="table.start()" />
+			<span id="msg"></span>
+		</div>
+		<div id="table" class="table">
+		
+		</div>
+		<div id="desk" class="desk"></div>
+		<script src="card.js"></script>
+		<script>
+			var table=new Lord(['table','desk']);
+			var roleJoin=function(){
+				table.join(document.getElementById('role_name').value);
+			}
+		</script>
+	</body>
+</html>
